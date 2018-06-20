@@ -86,6 +86,7 @@ var ages = _map(under_30, function(user){
 
 console.log(ages);
 
+
 console.log(
   _filter(users, function(user){ return user.age >= 30;})
 );
@@ -100,4 +101,18 @@ console.log(
 
 console.log(
   _filter([1, 2, 3, 4], function(num){ return !(num%2);})
+);
+
+console.log(
+  _map(
+    _filter(users, function(user){return user.age >= 30;}),
+    function(user) {return user.name;}
+  )
+);
+
+console.log(
+  _map(
+    _filter(users, function(user){return user.age < 30;}),
+    function(user) {return user.name;}
+  )
 );
